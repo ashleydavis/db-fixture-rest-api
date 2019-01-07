@@ -2,7 +2,7 @@
 
 A REST API for loading and unloading MongoDB database fixtures.
 
-**Don't run this on a production server, it is for testing only!**
+**Don't run this on a production server, it is for testing only and provides unauthenticated access to your database!**
 
 Use this in your automated test process to load and unload your database for testing.
 
