@@ -16,6 +16,7 @@ You need a MongoDB instance ready for testing.
 
 ## Important files
 
+    index.js                    -> The JavaScript file that implements the REST API.
     fixtures/                   -> Database fixtures live under this directory.
         example-json-fixture/   -> An example database fixture in JSON format.
         example-js-fixture/     -> An example database fixture in JavaScript format.
