@@ -8,6 +8,7 @@ if (inProduction) {
 const express = require('express');
 const Fixtures = require('node-mongodb-fixtures');
 const path = require('path');
+const{ MongoClient, ObjectId, ObjectID } = require('mongodb');
 
 const app = express();
 
@@ -17,6 +18,13 @@ const databaseHost = process.env.DBHOST || "mongodb://localhost:27017";
 const dbName = process.env.DBNAME || "my-test-database";
 console.log("Using DBHOST " + databaseHost);
 console.log("Using DB " + dbName);
+
+//
+// Connect to the database.
+//
+async function connectDatabase() {
+    return await MongoClient.connect(databaseHost);
+}
 
 //
 // Start the HTTP server.
@@ -74,6 +82,9 @@ async function unloadFixture(fixtureName) {
 
 async function main() {
 
+    const client = await connectDatabase();
+    const db = client.db(dbName);
+
     app.get("/load-fixture", (req, res) => {
         if (!req.query && !req.query.name) {
             res.status(400).send("Specify query parameter 'name'");
@@ -111,6 +122,25 @@ async function main() {
                 res.status(400).send(msg);
             });
     });
+    
+    app.get("/drop-collection", (req, res) => {
+        if (!req.query && !req.query.name) {
+            res.status(400).send("Specify query parameter 'name'");
+        }
+
+        const collectionName = req.query.name;
+        db.dropCollection(collectionName)
+            .then(() => {
+                console.log("Dropped collection: " + collectionName);
+                res.sendStatus(200);
+            })
+            .catch(err => {
+                const msg = "Failed to drop collection " + collectionName;
+                console.error(msg);
+                console.error(err && err.stack || err);
+                res.status(400).send(msg);
+            });
+    });    
     
     await startServer();
 }

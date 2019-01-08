@@ -27,6 +27,7 @@ This REST API exposes the following endpoints:
 
 - HTTP GET http://localhost:3555/load-fixture?name=your-fixture-name
 - HTTP GET http://localhost:3555/unload-fixture?name=your-fixture-name
+- HTTP GET http://localhost:3555/drop-collection?name=collection-name
 
 The default port number is 3555, but you can set this to any value as described in the section *Use it in your project* below.
 
@@ -47,13 +48,15 @@ Two example database fixtures are included under the *fixtures* sub-directory.
 
 You can load them using the names *example-js-fixture* and *example-json-fixture*.
 
-For example, to load *example-js-fixture* hit http://localhost:3555/load-fixture?name=example-json-fixture with HTTP GET request.
+For example, to load *example-js-fixture* hit http://localhost:3555/load-fixture?name=example-json-fixture with a HTTP GET request.
 
 After you have loaded a fixture, browse your database to check that the data has been loaded correctly. By default it is loaded under a database named *my-test-database*.
 
 After that you can unload the fixture and then check that the data was removed from the database.
 
-For example to unload *example-js-fixture*, hit http://localhost:3555/unload-fixture?name=example-json-fixture with HTTP GET request.
+For example to unload *example-js-fixture*, hit http://localhost:3555/unload-fixture?name=example-json-fixture with a HTTP GET request.
+
+You can also directly drop any collection, for example to drop a collection called *person*, hit http://localhost:3555/drop-collection?name=person with a HTTP GET request. 
 
 ## Use it in your project
 
