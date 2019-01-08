@@ -1,5 +1,5 @@
 {
-  "name": "db-fixuture-rest-api",
+  "name": "db-fixture-rest-api",
   "version": "1.0.0",
   "description": "A REST API for loading and unloading MongoDB database fixtures.",
   "scripts": {
