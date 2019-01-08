@@ -45,7 +45,7 @@ function startServer() {
             console.log("Use the following endpoints to load and unload your database fixtures:");
             console.log(`HTTP GET http://localhost:${port}/load-fixture?name=your-fixture-name`);
             console.log(`HTTP GET http://localhost:${port}/unload-fixture?name=your-fixture-name`);
-
+            console.log(`HTTP GET http://localhost:${port}/drop-collection?name=collection-name`);
             resolve(server);
         });
     });
@@ -141,7 +141,7 @@ async function main() {
                 res.status(400).send(msg);
             });
     });    
-    
+
     await startServer();
 }
 
