@@ -80,6 +80,30 @@ async function unloadFixture(fixtureName) {
     await fixtures.disconnect();
 }
 
+//
+// Determine if a particular named collection already exists.
+//
+// Source: https://stackoverflow.com/questions/21023982/how-to-check-if-a-collection-exists-in-mongodb-native-nodejs-driver
+//
+async function collectionExists (db, collectionName) {
+    const collectionNames = await db.listCollections().toArray();
+    return collectionNames.some(collection => collection.name === collectionName);
+}
+
+//
+// Drop a collection if it exists.
+//
+async function dropCollection (db, collectionName) {
+    const collectionAlreadyExists = await collectionExists(db, collectionName);
+    if (collectionAlreadyExists) {
+        await db.dropCollection(collectionName);
+        console.log("Dropped collection: " + collectionName);
+    }
+    else {
+        console.log("Collection doesn't exist: " + collectionName);
+    }
+}
+
 async function main() {
 
     const client = await connectDatabase();
@@ -129,9 +153,8 @@ async function main() {
         }
 
         const collectionName = req.query.name;
-        db.dropCollection(collectionName)
+        dropCollection(db, collectionName)
             .then(() => {
-                console.log("Dropped collection: " + collectionName);
                 res.sendStatus(200);
             })
             .catch(err => {
