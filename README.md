@@ -23,13 +23,25 @@ You need a MongoDB instance ready for testing.
 
 ## REST API endpoints
 
-This REST API exposes the following endpoints:
-
-- HTTP GET http://localhost:3555/load-fixture?name=your-fixture-name
-- HTTP GET http://localhost:3555/unload-fixture?name=your-fixture-name
-- HTTP GET http://localhost:3555/drop-collection?name=collection-name
+This REST API exposes the following endpoints.
 
 The default port number is 3555, but you can set this to any value as described in the section *Use it in your project* below.
+
+### Load fixture
+
+    HTTP GET http://localhost:3555/load-fixture?name=your-fixture-name
+
+### Unload fixture
+
+    HTTP GET http://localhost:3555/unload-fixture?name=your-fixture-name
+
+### Drop a database collection
+
+    HTTP GET http://localhost:3555/drop-collection?name=collection-name
+
+### Retrieve a database collection
+
+    HTTP GET http://localhost:3555/get-collection?name=collection-name
 
 ## Trial run
 

@@ -163,7 +163,27 @@ async function main() {
                 console.error(err && err.stack || err);
                 res.status(400).send(msg);
             });
-    });    
+    });
+
+    app.get("/get-collection", (req, res) => {
+        if (!req.query && !req.query.name) {
+            res.status(400).send("Specify query parameter 'name'");
+        }
+
+        const collectionName = req.query.name;
+        db.collection(collectionName)
+            .find()
+            .toArray()
+            .then(documents => {
+                res.json(documents);
+            })
+            .catch(err => {
+                const msg = "Failed to get collection " + collectionName;
+                console.error(msg);
+                console.error(err && err.stack || err);
+                res.status(400).send(msg);
+            });
+    });
 
     await startServer();
 }
