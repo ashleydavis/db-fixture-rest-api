@@ -109,6 +109,12 @@ async function main() {
     const client = await connectDatabase();
     const db = client.db(dbName);
 
+    app.get("/is-alive", (req, res) => {
+        res.json({
+            ok: true,
+        });
+    });
+
     app.get("/load-fixture", (req, res) => {
         if (!req.query && !req.query.name) {
             res.status(400).send("Specify query parameter 'name'");
