@@ -17,6 +17,7 @@ You need a MongoDB instance ready for testing.
 ## Important files
 
     index.js                    -> The JavaScript file that implements the REST API.
+    Dockerfile                  -> Allows you to package this application in a Docker image.
     fixtures/                   -> Database fixtures live under this directory.
         example-json-fixture/   -> An example database fixture in JSON format.
         example-js-fixture/     -> An example database fixture in JavaScript format.
@@ -42,6 +43,10 @@ The default port number is 3555, but you can set this to any value as described 
 ### Retrieve a database collection
 
     HTTP GET http://localhost:3555/get-collection?name=collection-name
+
+## Auto reload
+
+By default the db fixture REST API is executed using [nodemon](https://nodemon.io/) and is setup to watch the fixtures directory. This means you can update or add fixtures in order to restart the server.
 
 ## Trial run
 

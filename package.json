@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "A REST API for loading and unloading MongoDB database fixtures.",
   "scripts": {
-    "start": "node index.js",
-    "start:dev": "nodemon index.js",
+    "start": "nodemon --watch fixtures/**/* index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -26,9 +25,9 @@
   "dependencies": {
     "express": "^4.16.4",
     "mongodb": "^3.1.10",
-    "node-mongodb-fixtures": "^2.2.1"
+    "node-mongodb-fixtures": "^2.2.1",
+    "nodemon": "^1.18.9"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
   }
 }
