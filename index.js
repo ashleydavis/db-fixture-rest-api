@@ -41,7 +41,7 @@ function startServer() {
             const host = addrInfo.address;
             const port = addrInfo.port;
             console.log("DB fixture REST API listening at http://%s:%s", host, port);
-            console.log("Please please your database fixtures in the 'fixtures' sub-directory.")
+            console.log("Please put your database fixtures in the 'fixtures' sub-directory.")
             console.log("Use the following endpoints to load and unload your database fixtures:");
             console.log(`HTTP GET http://localhost:${port}/load-fixture?name=your-fixture-name`);
             console.log(`HTTP GET http://localhost:${port}/unload-fixture?name=your-fixture-name`);
