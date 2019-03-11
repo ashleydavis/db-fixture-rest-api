@@ -110,6 +110,8 @@ async function main() {
     const client = await connectDatabase();
     const db = client.db(dbName);
 
+    app.use(express.static("./build"));
+
     app.get("/is-alive", (req, res) => {
         res.json({
             ok: true,
