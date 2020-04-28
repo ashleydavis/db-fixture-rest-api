@@ -2,7 +2,7 @@
 
 A REST API for loading and unloading MongoDB database fixtures.
 
-**Don't run this on a production server, it is for testing only and provides unauthenticated access to your database!**
+## **Don't run this on a production server, it is for testing only and provides unauthenticated access to your database!**
 
 Use this in your automated test process to load and unload your database for testing.
 
@@ -16,7 +16,7 @@ You need a MongoDB instance ready for testing.
 
 ## Important files
 
-    index.js                    -> The JavaScript file that implements the REST API.
+    src/index.js                -> The JavaScript file that implements the REST API.
     Dockerfile                  -> Allows you to package this application in a Docker image.
     fixtures/                   -> Database fixtures live under this directory.
         example-json-fixture/   -> An example database fixture in JSON format.
@@ -30,19 +30,28 @@ The default port number is 3555, but you can set this to any value as described 
 
 ### Load fixture
 
-    HTTP GET http://localhost:3555/load-fixture?name=your-fixture-name
+    HTTP GET http://localhost:3555/load-fixture?db=<database-name>&fix=<fixture-to-load>
 
 ### Unload fixture
 
-    HTTP GET http://localhost:3555/unload-fixture?name=your-fixture-name
+    HTTP GET http://localhost:3555/unload-fixture?db=<database-name>&ix=<fixture-to-unload>
 
-### Drop a database collection
-
-    HTTP GET http://localhost:3555/drop-collection?name=collection-name
 
 ### Retrieve a database collection
 
-    HTTP GET http://localhost:3555/get-collection?name=collection-name
+    HTTP GET http://localhost:3555/get-collection?db=<database-name>&col=<collection-to-get>
+
+### Drop a database collection
+
+    HTTP GET http://localhost:3555/drop-collection?db=<database-name>&col=<collection-to-drop>
+
+**Be careful to only drop a collection on dev or testing machines!**
+
+### Drop a database
+
+    HTTP GET http://localhost:3555/drop-database?db=<database-name>
+
+**Be careful to only drop a database on dev or testing machines!**
 
 ## Auto reload
 
@@ -65,15 +74,17 @@ Two example database fixtures are included under the *fixtures* sub-directory.
 
 You can load them using the names *example-js-fixture* and *example-json-fixture*.
 
-For example, to load *example-js-fixture* hit http://localhost:3555/load-fixture?name=example-json-fixture with a HTTP GET request.
+For example, to load *example-js-fixture* hit http://localhost:3555/load-fixture?db=my-test-db&fix=example-json-fixture with a HTTP GET request.
 
 After you have loaded a fixture, browse your database to check that the data has been loaded correctly. By default it is loaded under a database named *my-test-database*.
 
 After that you can unload the fixture and then check that the data was removed from the database.
 
-For example to unload *example-js-fixture*, hit http://localhost:3555/unload-fixture?name=example-json-fixture with a HTTP GET request.
+For example to unload *example-js-fixture*, hit http://localhost:3555/unload-fixture?db=my-test-db&fix=example-json-fixture with a HTTP GET request.
 
-You can also directly drop any collection, for example to drop a collection called *person*, hit http://localhost:3555/drop-collection?name=person with a HTTP GET request. 
+You can also directly drop any collection, for example to drop a collection called *person*, hit http://localhost:3555/drop-collection?db=my-test-db&col=person with a HTTP GET request. 
+
+In a similar way you can drop an entire database.
 
 ## Use it in your project
 
@@ -81,8 +92,7 @@ To use this REST API to help test your own project please customize it by settin
 
 - FIXTURES_DIR - Set the location of the fixtures directory (defaults to 'fixtures').
 - PORT - Set the port number of the REST API (defaults to 3555).
-- DBHOST - Set the host address for the MongoDB server instance (defaults to mongodb://localhost:27017).
-- DBNAME - Name of the databse to load and unload fixtures to (defaults to my-test-database).
+- DBHOST - Set the host address for the MongoDB server instance (defaults to mongodb://localhost:27017)..
 
 Doesn't do what you want?
 Please fork the code and hack it to your heart's content ;)
