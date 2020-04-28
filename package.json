@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ashleydavis/db-fixuture-rest-api.git"
+    "url": "git+https://github.com/ashleydavis/db-fixture-rest-api.git"
   },
   "keywords": [
     "test",
@@ -19,9 +19,9 @@
   "author": "ashley@codecapers.com.au",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ashleydavis/db-fixuture-rest-api/issues"
+    "url": "https://github.com/ashleydavis/db-fixture-rest-api/issues"
   },
-  "homepage": "https://github.com/ashleydavis/db-fixuture-rest-api#readme",
+  "homepage": "https://github.com/ashleydavis/db-fixture-rest-api#readme",
   "dependencies": {
     "express": "^4.16.4",
     "globby": "^9.1.0",
@@ -29,5 +29,6 @@
     "node-mongodb-fixtures": "^2.2.1",
     "nodemon": "^1.18.9"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "private": true
 }
