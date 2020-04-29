@@ -16,11 +16,11 @@ This builds upon [node-mongodb-fixtures](https://www.npmjs.com/package/node-mong
 
 You must have Node.js installed to run this.
 
-<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support2.png"></a>
-
 You need a MongoDB instance ready for testing.
 
 ## Important files
+
+<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support2.png"></a>
 
     src/index.js                -> The JavaScript file that implements the REST API.
     Dockerfile                  -> Allows you to package this application in a Docker image.
@@ -28,13 +28,13 @@ You need a MongoDB instance ready for testing.
         example-json-fixture/   -> An example database fixture in JSON format.
         example-js-fixture/     -> An example database fixture in JavaScript format.
 
-<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support3.png"></a>
-
 ## REST API endpoints
 
 This REST API exposes the following endpoints.
 
 The default port number is 3555, but you can set this to any value as described in the section *Use it in your project* below.
+
+<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support3.png"></a>
 
 ### Load fixture
 
