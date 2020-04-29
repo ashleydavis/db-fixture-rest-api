@@ -107,14 +107,8 @@ Please see [node-mongodb-fixtures](https://www.npmjs.com/package/node-mongodb-fi
 
 ## Supporting the developer
 
-<a class="support" target="_blank" href="https://www.data-forge-notebook.com/"><img align="right" src="images/support1.png"></a>
+<a class="support" target="_blank" href="https://www.data-forge-notebook.com/"><img src="images/support1.png"></a>
 
-<br />
+<a class="support" target="_blank" href="http://bit.ly/2t2cJu2"><img src="images/support2.png"></a>
 
-<a class="support" target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support2.png"></a>
-
-<br />
-
-<a class="support" target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support3.png"></a>
-
-<br />
+<a class="support" target="_blank" href="http://bit.ly/2t2cJu2"><img src="images/support3.png"></a>
