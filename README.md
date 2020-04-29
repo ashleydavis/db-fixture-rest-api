@@ -1,3 +1,16 @@
+<style>
+    /* https://stackoverflow.com/a/29191968/25868 */
+    .my-mobile-image {
+        display: none; /* This is how it looks on mobile */
+    }
+
+    @media (min-width: 600px) {
+        .support {
+            display: block; /* This is how it looks on desktop */
+        }
+    }    
+</style>
+
 # db-fixture-rest-api
 
 A REST API for loading and unloading MongoDB database fixtures.
@@ -6,7 +19,7 @@ Featured in the book [Bootstrapping Microservices](http://bit.ly/2o0aDsP).
 
 ## **Don't run this on a production server, it is for testing only and provides unauthenticated access to your database!**
 
-<a target="_blank" href="https://www.data-forge-notebook.com/"><img align="right" src="images/support1.png"></a>
+<a class="support" target="_blank" href="https://www.data-forge-notebook.com/"><img align="right" src="images/support1.png"></a>
 
 Use this in your automated test process to load and unload your database for testing.
 
@@ -26,7 +39,7 @@ You need a MongoDB instance ready for testing.
         example-json-fixture/   -> An example database fixture in JSON format.
         example-js-fixture/     -> An example database fixture in JavaScript format.
 
-<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support2.png"></a>
+<a class="support" target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support2.png"></a>
 
 ## REST API endpoints
 
@@ -47,7 +60,7 @@ The default port number is 3555, but you can set this to any value as described 
 
     HTTP GET http://localhost:3555/get-collection?db=<database-name>&col=<collection-to-get>
 
-<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support3.png"></a>
+<a class="support" target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support3.png"></a>
 
 ### Drop a database collection
 
