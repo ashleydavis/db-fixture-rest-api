@@ -105,7 +105,7 @@ Please fork the code and hack it to your heart's content ;)
 
 Please see [node-mongodb-fixtures](https://www.npmjs.com/package/node-mongodb-fixtures) for more of what you can do with these database fixtures.
 
-## Supporting the developer
+## Support the developer
 
 <a class="support" target="_blank" href="http://bit.ly/2o0aDsP"><img src="images/support1.png"></a>
 
