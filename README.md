@@ -10,7 +10,7 @@ Use this in your automated test process to load and unload your database for tes
 
 This builds upon [node-mongodb-fixtures](https://www.npmjs.com/package/node-mongodb-fixtures).
 
-**Scroll** to the end to see how you can support the developer.
+**Scroll** to the end to see how you can [support the developer](#support-the-developer).
 
 ## Pre-requisites
 
