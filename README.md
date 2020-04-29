@@ -2,6 +2,10 @@
 
 A REST API for loading and unloading MongoDB database fixtures.
 
+<a target="_blank" href="https://www.data-forge-notebook.com/"><img align="right" src="images/support1.png"></a>
+
+Featured in the book [Bootstrapping Microservices](http://bit.ly/2o0aDsP).
+
 ## **Don't run this on a production server, it is for testing only and provides unauthenticated access to your database!**
 
 Use this in your automated test process to load and unload your database for testing.
@@ -12,6 +16,8 @@ This builds upon [node-mongodb-fixtures](https://www.npmjs.com/package/node-mong
 
 You must have Node.js installed to run this.
 
+<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support2.png"></a>
+
 You need a MongoDB instance ready for testing.
 
 ## Important files
@@ -21,6 +27,8 @@ You need a MongoDB instance ready for testing.
     fixtures/                   -> Database fixtures live under this directory.
         example-json-fixture/   -> An example database fixture in JSON format.
         example-js-fixture/     -> An example database fixture in JavaScript format.
+
+<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support3.png"></a>
 
 ## REST API endpoints
 
