@@ -34,11 +34,11 @@ This REST API exposes the following endpoints.
 
 The default port number is 3555, but you can set this to any value as described in the section *Use it in your project* below.
 
-<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support3.png"></a>
-
 ### Load fixture
 
     HTTP GET http://localhost:3555/load-fixture?db=<database-name>&fix=<fixture-to-load>
+
+<a target="_blank" href="http://bit.ly/2t2cJu2"><img align="right" src="images/support3.png"></a>
 
 ### Unload fixture
 
